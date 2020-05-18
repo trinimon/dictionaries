@@ -24,7 +24,7 @@ thanks to the Tcl/Tk and all Open Source Software developers!
 
 Frank Richter <frank.richter@hrz.tu-chemnitz.de>
 
-#### [Spanish-German word list](https://ftp.tu-chemnitz.de/pub/Local/urz/ding/de-en/Readme)
+#### [Spanish-German word list](https://savannah.nongnu.org/projects/ding-es-de/)
 
 This project is not part of the GNU Project.
 
