@@ -30,4 +30,4 @@ Using the above shown command, the database is listening on port 5433. The user 
 
 For the lisence of this image look [here](LICENSE).
 
-For licenses of word lists see [here](LICENSES_THIRD_PARTY).
+For licenses of word lists see [here](LICENSES_THIRD_PARTY.md).
