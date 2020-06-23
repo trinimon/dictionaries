@@ -9,15 +9,20 @@ psql -v ON_ERROR_STOP=1 -o /dev/null --username "$POSTGRES_USER" --dbname "$POST
     
     CREATE SCHEMA english;
     CREATE SCHEMA spanish;
-
-    CREATE TABLE english.dictionary (
-      de VARCHAR(8192) NOT NULL,
-      en VARCHAR(8192) NOT NULL
+    
+    CREATE SEQUENCE english.id_sequence START 1;
+    CREATE SEQUENCE spanish.id_sequence START 1;
+    
+    CREATE TABLE english.translation (
+      id      BIGINT PRIMARY KEY DEFAULT nextval('english.id_sequence'),
+      german  VARCHAR(8192) NOT NULL,
+      english VARCHAR(8192) NOT NULL
     );
     
-    CREATE TABLE spanish.dictionary (
-      es VARCHAR(8192) NOT NULL,
-      de VARCHAR(8192) NOT NULL
+    CREATE TABLE spanish.translation (
+      id      BIGINT PRIMARY KEY DEFAULT nextval('spanish.id_sequence'),
+      german  VARCHAR(8192) NOT NULL,
+      spanish VARCHAR(8192) NOT NULL
     );
     
     \i /tmp/script-en.sql

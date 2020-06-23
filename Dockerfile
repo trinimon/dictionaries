@@ -6,13 +6,13 @@ RUN wget https://ftp.tu-chemnitz.de/pub/Local/urz/ding/de-en/de-en.txt.gz && gun
     sed '/^#/d' de-en.txt | \
     sed 's/'\''/'\'''\''/g' | \
     sed 's/\s*::\s*/'\'','\'''/g | \
-    sed 's/^\(.*\)$/INSERT INTO english.dictionary VALUES ('\''\1'\'');/g' >/tmp/script-en.sql 
+    sed 's/^\(.*\)$/INSERT INTO english.translation (german, english) VALUES ('\''\1'\'');/g' >/tmp/script-en.sql 
     
 RUN wget http://cvs.savannah.nongnu.org/viewvc/*checkout*/ding-es-de/ding-es-de/es-de && \
     sed '/^#/d' es-de | \
     sed 's/'\''/'\'''\''/g' | \
     sed 's/\s*\(::\s*\)\+/'\'','\'''/g | \
-    sed 's/^\(.*\)$/INSERT INTO spanish.dictionary VALUES ('\''\1'\'');/g' >/tmp/script-es.sql 
+    sed 's/^\(.*\)$/INSERT INTO spanish.translation (german, spanish) VALUES ('\''\1'\'');/g' >/tmp/script-es.sql 
     
 RUN rm de-en.txt && \
     chown postgres /tmp/script-en.sql && \
