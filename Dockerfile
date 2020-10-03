@@ -12,7 +12,7 @@ RUN wget http://cvs.savannah.nongnu.org/viewvc/*checkout*/ding-es-de/ding-es-de/
     sed '/^#/d' es-de | \
     sed 's/'\''/'\'''\''/g' | \
     sed 's/\s*\(::\s*\)\+/'\'','\'''/g | \
-    sed 's/^\(.*\)$/INSERT INTO spanish.translation (german, spanish) VALUES ('\''\1'\'');/g' >/tmp/script-es.sql 
+    sed 's/^\(.*\)$/INSERT INTO spanish.translation (spanish, german) VALUES ('\''\1'\'');/g' >/tmp/script-es.sql 
     
 RUN rm de-en.txt && \
     chown postgres /tmp/script-en.sql && \
