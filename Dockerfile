@@ -1,6 +1,5 @@
 FROM postgres:12.2-alpine
-
-MAINTAINER André Heuner <andre.heuner@trinimon.de>
+LABEL maintainer="André Heuner"
 
 RUN wget https://ftp.tu-chemnitz.de/pub/Local/urz/ding/de-en/de-en.txt.gz && gunzip de-en.txt.gz && \
     sed '/^#/d' de-en.txt | \
