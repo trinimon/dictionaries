@@ -1,12 +1,10 @@
-# A dictionaries Docker image based on PostgreSQL
+# A Dictionaries Docker Image
 
-This image contains a PostgreSQL database with schemas for an english and a spanish dictionary. 
-
-The database is called *dictionaries* which is owned by the user *translator*. Schemas inside the database are named corresponding to the language they contain, e.g. *english* or *spanish*. Tables are named *translations*.
+This repository contains a Docker file for the creation of a PostgreSQL database image including prepared schemas for an english and a spanish dictionary. 
 
 # Docker Hub
 
-... 
+Check out the [Docker Hub Respoitory](https://hub.docker.com/r/trinimon/dictionaries) for further information.
 
 # Licenses
 
