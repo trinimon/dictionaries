@@ -4,7 +4,7 @@ This repository contains a Docker file for the creation of a PostgreSQL database
 
 # Docker Hub
 
-Check out the [Docker Hub Respoitory](https://hub.docker.com/r/trinimon/dictionaries) for further information.
+Check out the Docker Hub Respoitory [trinimon/dictionaries](https://hub.docker.com/r/trinimon/dictionaries) for further information.
 
 # Licenses
 
