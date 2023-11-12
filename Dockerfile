@@ -1,4 +1,4 @@
-FROM postgres:12.2-alpine
+FROM postgres:16.0-alpine3.18
 LABEL maintainer="André Heuner"
 
 RUN wget https://ftp.tu-chemnitz.de/pub/Local/urz/ding/de-en/de-en.txt.gz && gunzip de-en.txt.gz && \

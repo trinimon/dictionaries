@@ -18,7 +18,8 @@ Tables are named *translations*.
 
 # Tags
 
-* **1.0, latest**: alpine 3.11.6, Postgres 12.10, distionaries as of 30.04.2023
+* **1.1, latest**: alpine 3.18, Postgres 16.0, dictionaries as of 12.11.2023
+* **1.0**: alpine 3.11.6, Postgres 12.10, dictionaries as of 30.04.2023
 
 # Requirements
 

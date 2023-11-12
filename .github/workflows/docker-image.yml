@@ -28,5 +28,5 @@ jobs:
           platforms: linux/386,linux/amd64,linux/arm/v6
           push: true
           tags: |
-            trinimon/dictionaries:1.0
+            trinimon/dictionaries:1.1
             trinimon/dictionaries:latest
