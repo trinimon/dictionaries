@@ -1,13 +1,12 @@
-# A Dictionaries Docker Image
+# Dictionaries Docker Image
 
-This repository contains a Docker file for the creation of a PostgreSQL database image including prepared schemas for an english and a spanish dictionary. 
+This repository contains a Dockerfile that creates a PostgreSQL database Image with preconfigured schemas for English and Spanish dictionary data.
 
-# Docker Hub
+## Docker Hub
 
-Check out the Docker Hub Respoitory [trinimon/dictionaries](https://hub.docker.com/r/trinimon/dictionaries) for further information.
+For more information, visit the Docker Hub repository [trinimon/dictionaries](https://hub.docker.com/r/trinimon/dictionaries).
 
-# Licenses
+## Licenses
 
-For the lisence of this image look [here](LICENSE).
-
-For licenses of word lists look [here](LICENSES_THIRD_PARTY.md).
+- The license for this image can be found [here](LICENSE).
+- Licenses for the bundled word lists are provided [here](LICENSES_THIRD_PARTY.md).

@@ -1,4 +1,4 @@
-FROM postgres:16.0-alpine3.18
+FROM postgres:18.1-alpine3.23
 LABEL maintainer="André Heuner"
 
 RUN wget https://ftp.tu-chemnitz.de/pub/Local/urz/ding/de-en/de-en.txt.gz && gunzip de-en.txt.gz && \
@@ -7,7 +7,7 @@ RUN wget https://ftp.tu-chemnitz.de/pub/Local/urz/ding/de-en/de-en.txt.gz && gun
     sed 's/\s*::\s*/'\'','\'''/g | \
     sed 's/^\(.*\)$/INSERT INTO english.translation (german, english) VALUES ('\''\1'\'');/g' >/tmp/script-en.sql 
     
-RUN wget http://cvs.savannah.nongnu.org/viewvc/*checkout*/ding-es-de/ding-es-de/es-de && \
+RUN wget https://cvs.savannah.nongnu.org/viewvc/*checkout*/ding-es-de/ding-es-de/es-de && \
     sed '/^#/d' es-de | \
     sed 's/'\''/'\'''\''/g' | \
     sed 's/\s*\(::\s*\)\+/'\'','\'''/g | \

@@ -1,49 +1,51 @@
 # About the Dictionaries
 
-The word lists imported in the database have been publishd along with the dictionary program *ding* by Frank Richter.
+The word lists imported into this database were originally published alongside the dictionary program *DING* by Frank Richter.
 
-Program and lists are shipped with *GNU FDL* and *GPL* and *Creative Commons cc-by-sa* licenses.
+The program and lists are distributed under the *GNU FDL*, *GPL*, and *Creative Commons CC-BY-SA* licenses.
 
-Many thanks to Frank for making these lists available!
+Many thanks to Frank Richter for making these lists available!
 
 # Image Description
 
-This image contains a PostgreSQL database with schemas for an english and a spanish dictionary.
+This image contains a PostgreSQL database with schemas for English and Spanish dictionaries.
 
-The database is called *dictionaries* which is owned by the user *translator*.
+The database is named *dictionaries* and is owned by the user *translator*.  
 
-Schemas inside the database are named corresponding to the language they contain, e.g. *english* or *spanish*.
-
-Tables are named *translations*.
+Schemas inside the database are named according to the language they contain, e.g. *english* or *spanish*.
+  
+Each schema contains a single table named *translations*.
 
 # Tags
 
-* **1.1, latest**: alpine 3.18, Postgres 16.0, dictionaries as of 12.11.2023
-* **1.0**: alpine 3.11.6, Postgres 12.10, dictionaries as of 30.04.2023
+* **1.2, latest**: Alpine 3.23, PostgreSQL 18.1, dictionaries as of 2026-01-02
+* **1.1, latest**: Alpine 3.18, PostgreSQL 16.0, dictionaries as of 2023-11-12
+* **1.0**: Alpine 3.11.6, PostgreSQL 12.10, dictionaries as of 2023-04-30
 
 # Requirements
 
-The docker image is available for `amd64`, `arm/v6` and `386` platforms.
+The Docker image is available for `amd64`, `arm/v6`, `arm/v7` and `386` platforms.
 
 # Running
 
-The following command starts a container and sets the Postgres admin user password to *secret*:
+The following command starts a container and sets the PostgreSQL admin user password to *secret*:
 
-```
-docker run --rm -d \
+```bash
+docker run --rm -d
            --publish 5433:5432 \
            --env POSTGRES_PASSWORD=secret trinimon/dictionaries:latest
 ```
 
 The database port is published on port 5433. The user *translator* has the predefined password *secret*.
 
-Please note that the log in is only available after initial import of the word lists. This might take a couple of minutes.
+Please note: during the first startup, the word lists are imported into the database.
+This initialization process may take a few minutes, which delays the availability of the database login.
+On subsequent container starts, no import is performed and the database becomes available more quickly.
 
-Navigate to the dictionaries database and its schemas to find the dictionaries data tables.
+Once the import is complete, connect to the dictionaries database and explore the language schemas to find the dictionary tables.
 
 # Licenses
 
-Checkout license information at [alpine](https://hub.docker.com/_/alpine) and [Postgres](https://www.postgresql.org/about/licence/).
+See license information for [Alpine](https://hub.docker.com/_/alpine) and [PostgreSQL](https://www.postgresql.org/about/licence/).
 
 For license information of the word list see [this page](https://github.com/trinimon/dictionaries/blob/master/LICENSES_THIRD_PARTY.md).
-
