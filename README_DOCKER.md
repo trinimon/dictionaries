@@ -18,8 +18,9 @@ Each schema contains a single table named *translations*.
 
 # Tags
 
-* **1.2, latest**: Alpine 3.23, PostgreSQL 18.1, dictionaries as of 2026-01-02
-* **1.1, latest**: Alpine 3.18, PostgreSQL 16.0, dictionaries as of 2023-11-12
+* **1.3, latest**: env variables for translator user and password, dictionaries as of 2026-03-11 
+* **1.2**: Alpine 3.23, PostgreSQL 18.1, dictionaries as of 2026-01-02
+* **1.1**: Alpine 3.18, PostgreSQL 16.0, dictionaries as of 2023-11-12
 * **1.0**: Alpine 3.11.6, PostgreSQL 12.10, dictionaries as of 2023-04-30
 
 # Requirements
@@ -31,9 +32,11 @@ The Docker image is available for `amd64`, `arm/v6`, `arm/v7` and `386` platform
 The following command starts a container and sets the PostgreSQL admin user password to *secret*:
 
 ```bash
-docker run --rm -d
+docker run --rm -d \
            --publish 5433:5432 \
-           --env POSTGRES_PASSWORD=secret trinimon/dictionaries:latest
+           --env POSTGRES_PASSWORD=secret \
+           --env TRANSLATOR_USER=translator \
+           --env TRANSLATOR_PASSWORD=anothersecret trinimon/dictionaries:latest
 ```
 
 The database port is published on port 5433. The user *translator* has the predefined password *secret*.
